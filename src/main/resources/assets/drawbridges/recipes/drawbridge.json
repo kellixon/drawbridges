@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "drawbridges:drawbridge"
+  },
+  "pattern": [
+    "ttt",
+    "ttt",
+    "tt "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "t": {
+      "item": "minecraft:redstone"
+    }
+  }
+}

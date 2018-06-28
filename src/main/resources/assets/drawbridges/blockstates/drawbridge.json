@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "drawbridges:drawbridge"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "facing": {
+      "north": {"y": -180, "x": -90},
+      "south": {"y": 180, "x": 90},
+      "west": {"y": 270, "x": 90},
+      "east": {"y": 90, "x" : 90},
+      "up": {"y" : 180},
+      "down": {"x": 180}
+    }
+  }
+}

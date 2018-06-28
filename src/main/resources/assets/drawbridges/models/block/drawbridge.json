@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "drawbridges:blocks/drawbridge/drawbridge_sides",
+    "down": "drawbridges:blocks/drawbridge/drawbridge_back",
+    "up": "drawbridges:blocks/drawbridge/drawbridge_top",
+    "east": "drawbridges:blocks/drawbridge/drawbridge_sides",
+    "west": "drawbridges:blocks/drawbridge/drawbridge_sides",
+    "north": "drawbridges:blocks/drawbridge/drawbridge_sides",
+    "south": "drawbridges:blocks/drawbridge/drawbridge_sides"
+  }
+}
