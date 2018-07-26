@@ -1,6 +1,6 @@
 package com.msvdaamen.creativeTabs;
 
-import com.msvdaamen.blocks.ModBlocks;
+import com.msvdaamen.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 

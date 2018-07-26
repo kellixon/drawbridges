@@ -1,13 +1,18 @@
 package com.msvdaamen.drawbridges;
 
 import com.msvdaamen.creativeTabs.DrawbridgeTab;
+import com.msvdaamen.init.ModItems;
+import com.msvdaamen.init.ModRecipes;
+import com.msvdaamen.items.ModIngots;
 import com.msvdaamen.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Drawbridges.MODID, name = Drawbridges.NAME, version = Drawbridges.VERSION)
@@ -27,7 +32,7 @@ public class Drawbridges {
     @Mod.Instance
     public static Drawbridges instance;
 
-    private static Logger logger;
+    public static Logger logger;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -38,6 +43,7 @@ public class Drawbridges {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
+        ModRecipes.init();
         proxy.init(e);
     }
 

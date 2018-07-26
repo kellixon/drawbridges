@@ -24,7 +24,7 @@ public class DrawbridgeContainerGui extends GuiContainer {
 
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
-        String s = "TEMP";
+        String s = "Drawbridge";
         this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
     }
 

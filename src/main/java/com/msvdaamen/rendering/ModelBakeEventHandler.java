@@ -1,11 +1,10 @@
-package com.msvdaamen.models;
+package com.msvdaamen.rendering;
 
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ModelBakeEventHandler {
-
     public static final ModelBakeEventHandler instance = new ModelBakeEventHandler();
 
     private ModelBakeEventHandler() {};

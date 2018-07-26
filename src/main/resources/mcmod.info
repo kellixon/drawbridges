@@ -1,16 +1,16 @@
 [
-{
-  "modid": "drawbridges",
-  "name": "Drawbridges",
-  "description": "Drawbridges placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["msvdaamen"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "drawbridges",
+    "name": "Drawbridges",
+    "description": "Drawbridges adds new blocks to the game that can auto place blocks in a certain direction",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["msvdaamen", "ThoThoKill"],
+    "credits": "The Forge and FML guys, for making this example",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

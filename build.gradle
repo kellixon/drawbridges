@@ -7,11 +7,19 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
+
+repositories {
+    maven {
+        name "DVS1 Maven FS"
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+}
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "0.1"
+version = "1.0"
 group = "com.msvdaamen.drawbridges" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Drawbridges"
 

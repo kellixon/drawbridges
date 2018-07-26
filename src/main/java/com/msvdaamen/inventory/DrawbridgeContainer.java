@@ -2,6 +2,7 @@ package com.msvdaamen.inventory;
 
 import com.msvdaamen.tileentities.TileEntityDrawbridge;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.ClickType;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
@@ -49,7 +50,7 @@ public class DrawbridgeContainer extends Container {
     @Nullable
     @Override
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-        ItemStack itemstack = null;
+        ItemStack itemstack = ItemStack.EMPTY;;
         Slot slot = this.inventorySlots.get(index);
 
         if (slot != null && slot.getHasStack()) {
@@ -58,10 +59,10 @@ public class DrawbridgeContainer extends Container {
 
             if (index < TileEntityDrawbridge.SIZE) {
                 if (!this.mergeItemStack(itemstack1, TileEntityDrawbridge.SIZE, this.inventorySlots.size(), true)) {
-                    return null;
+                    return ItemStack.EMPTY;
                 }
             } else if (!this.mergeItemStack(itemstack1, 0, TileEntityDrawbridge.SIZE, false)) {
-                return null;
+                return ItemStack.EMPTY;
             }
 
             if (itemstack1.isEmpty()) {
@@ -71,7 +72,7 @@ public class DrawbridgeContainer extends Container {
             }
         }
 
-        return itemstack;
+        return ItemStack.EMPTY;
     }
 
     @Override

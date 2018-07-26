@@ -1,13 +1,9 @@
-package com.msvdaamen.blocks;
+package com.msvdaamen.rendering;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
 
-/**
- * Created by TheGreyGhost on 20/04/2015.
- */
-public class UnlistedPropertyCopiedBlock implements IUnlistedProperty<IBlockState>
-{
+public class UnlistedPropertyCopiedBlock implements IUnlistedProperty<IBlockState> {
     @Override
     public String getName() {
         return "UnlistedPropertyCopiedBlock";

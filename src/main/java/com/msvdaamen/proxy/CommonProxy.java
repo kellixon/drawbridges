@@ -1,14 +1,15 @@
 package com.msvdaamen.proxy;
 
-import com.msvdaamen.blocks.Drawbridge;
-import com.msvdaamen.blocks.ModBlocks;
-import com.msvdaamen.drawbridges.Drawbridges;
+import com.msvdaamen.drawbridges.ModOredict;
+import com.msvdaamen.init.Config;
+import com.msvdaamen.init.ModBlocks;
+import com.msvdaamen.init.ModItems;
 import com.msvdaamen.inventory.GuiProxy;
-import com.msvdaamen.tileentities.TileEntityDrawbridge;
+import com.msvdaamen.network.PacketHandler;
+import com.msvdaamen.world.OreGen;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -18,11 +19,22 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.io.File;
+
 import static com.msvdaamen.drawbridges.Drawbridges.instance;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
+
+    public static Configuration config;
+
     public void preInit(FMLPreInitializationEvent e) {
+        ModBlocks.registerDrawbridges();
+        ModItems.registerDrawbridge();
+        File directory = e.getModConfigurationDirectory();
+        config = new Configuration(new File(directory.getPath(), "drawbridges.cfg"));
+        Config.readConfig();
+        PacketHandler.registerMessages("Drawbridges");
     }
 
     public void init(FMLInitializationEvent e) {
@@ -30,16 +42,24 @@ public class CommonProxy {
     }
 
     public void postInit(FMLPostInitializationEvent e) {
+        if (config.hasChanged()) {
+            config.save();
+        }
+        if(!Config.useVanillaRecipe) {
+            GameRegistry.registerWorldGenerator(new OreGen(), 0);
+        }
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(new Drawbridge());
-        GameRegistry.registerTileEntity(TileEntityDrawbridge.class, new ResourceLocation(Drawbridges.MODID + "_drawbridge"));
+        ModBlocks.registerBlocks(event);
+        ModBlocks.registerTileEntity();
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemBlock(ModBlocks.drawbridge).setRegistryName(ModBlocks.drawbridge.getRegistryName()));
+        ModBlocks.registerItemBlock(event);
+        ModItems.registerItems(event);
+        ModOredict.registerOredict();
     }
 }
