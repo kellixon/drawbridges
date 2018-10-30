@@ -59,7 +59,6 @@ public class TileEntityBlockPR extends TileEntityBase implements ITickable {
             if(slot == CAMMOSLOT) {
                 if(itemStackHandler.getStackInSlot(CAMMOSLOT).getItem() instanceof ItemBlock) {
                     if(getWorld().getBlockState(getPos()).getBlock() instanceof Drawbridge) {
-                        System.out.println("sdhd");
                         world.setBlockState(getPos(), getWorld().getBlockState(getPos()).withProperty(BlockFacing.HAS_CAMMO, true));
                     }
 
@@ -167,7 +166,7 @@ public class TileEntityBlockPR extends TileEntityBase implements ITickable {
                     }else {
                         itemStackHandler.getStackInSlot(MAINSLOT).grow(1);
                     }
-                    getWorld().destroyBlock(getPos().offset(facing, startOfRetraction()), false);
+                    getWorld().setBlockToAir(getPos().offset(facing, startOfRetraction()));
                     placed--;
                 }
             }

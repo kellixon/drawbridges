@@ -29,8 +29,6 @@ public class CommonProxy {
     public static Configuration config;
 
     public void preInit(FMLPreInitializationEvent e) {
-        ModBlocks.registerDrawbridges();
-        ModItems.registerDrawbridge();
         File directory = e.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "drawbridges.cfg"));
         Config.readConfig();

@@ -4,14 +4,14 @@
     "model": "drawbridges:drawbridge"
   },
   "variants": {
-    "normal": {"model": "drawbridges:drawbridge"},
-    "inventory": {"model": "drawbridges:drawbridge"},
+    "normal": [{}],
+    "inventory": [{}],
     "facing": {
-      "north": {"model": "drawbridges:drawbridge", "y": 0},
+      "north": {"y": 0},
       "south": {"y": 180},
       "west": {"y": 270},
       "east": {"y": 90},
-      "up": {"model": "drawbridges:drawbridge", "y" : 0, "x": -90},
+      "up": {"y" : 0, "x": -90},
       "down": {"y": 0, "x": 90}
     },
     "has_cammo": {

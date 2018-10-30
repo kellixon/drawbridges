@@ -24,6 +24,7 @@ public class AdvDrawbridge extends BlockFacing implements ITileEntityProvider {
     public AdvDrawbridge() {
         setUnlocalizedName(Drawbridges.MODID + ".advanceddrawbridge");
         setRegistryName("advanceddrawbridge");
+        ModBlocks.addBlocks(this);
     }
 
     @Nullable

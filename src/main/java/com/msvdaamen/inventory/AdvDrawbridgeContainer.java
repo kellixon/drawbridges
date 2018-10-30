@@ -27,7 +27,7 @@ public class AdvDrawbridgeContainer extends Container {
 
     private void addOwnSlots() {
         IItemHandler itemHandler = this.te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-        addSlotToContainer(new SlotItemHandler(itemHandler, 0, 13, 12));
+//        addSlotToContainer(new SlotItemHandler(itemHandler, 0, 13, 12));
         int index = 1;
         for(int  b = 0; b < 2; b++) {
             for(int  i = 0; i < 8; i++) {

@@ -147,7 +147,7 @@ public class TileEntityAdvDrawbridge extends TileEntityBase implements ITickable
                     if(ItemStack.areItemsEqual(tempStack.getStackInSlot(i - 1), getItemstackWithMeta((getBlockStateAtPos(getPos().offset(facing, startOfRetraction())))))) {
                         if(itemStackHandler.getStackInSlot(i).isEmpty()) {
                             itemStackHandler.setStackInSlot(i, getItemstackWithMeta((getBlockStateAtPos(getPos().offset(facing, startOfRetraction())))));
-                            getWorld().destroyBlock(getPos().offset(facing, startOfRetraction()), false);
+                            getWorld().setBlockToAir(getPos().offset(facing, startOfRetraction()));
                             placed--;
                             break;
                         }
@@ -238,17 +238,7 @@ public class TileEntityAdvDrawbridge extends TileEntityBase implements ITickable
         this.readFromNBT(packet.getNbtCompound());
     }
 
-    public void setRANGE(int RANGE) {
-        this.RANGE = RANGE;
-    }
-
     public boolean shouldPlace() {
         return getWorld().isBlockIndirectlyGettingPowered(getPos()) > 0;
     }
-
-    public void setPlacementDuration(int placementDuration) {
-        this.placementDuration = placementDuration;
-    }
-
-    public int getPlacementDuration() {return this.placementDuration; }
 }

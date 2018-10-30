@@ -26,8 +26,8 @@ public class ExtendedDrawbridgeContainer extends Container {
 
     private void addOwnSlots() {
         IItemHandler itemHandler = this.te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
-        addSlotToContainer(new SlotItemHandler(itemHandler,  0, 80, 33));
-        addSlotToContainer(new SlotItemHandler(itemHandler, 1, 27, 39));
+        addSlotToContainer(new SlotItemHandler(itemHandler,  this.te.MAINSLOT, 80, 33));
+//        addSlotToContainer(new SlotItemHandler(itemHandler, this.te.CAMMOSLOT, 27, 39));
     }
 
 

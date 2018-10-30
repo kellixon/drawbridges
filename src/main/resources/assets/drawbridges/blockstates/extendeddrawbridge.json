@@ -13,6 +13,10 @@
       "east": {"y": 90},
       "up": {"y" : 0, "x": -90},
       "down": {"y": 0, "x": 90}
+    },
+    "has_cammo": {
+      "false": {"model": "drawbridges:extendeddrawbridge"},
+      "true": {"model": "drawbridges:extendeddrawbridge"}
     }
   }
 }

@@ -6,13 +6,10 @@ import com.msvdaamen.tileentities.TileEntityAdvDrawbridge;
 import com.msvdaamen.tileentities.TileEntityDrawbridge;
 import com.msvdaamen.tileentities.TileEntityPulseDrawbridge;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,19 +17,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 
 public class ModBlocks {
-
-    //ExtendedDrawbridge
-
     private static ArrayList<baseBlock> blocks = new ArrayList<>();
 
-//    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":drawbridge")
-    public static Drawbridge drawbridge = new Drawbridge();
+    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":drawbridge")
+    public static Drawbridge drawbridge;
 
-//    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":extendeddrawbridge")
-    public static ExtendedDrawbridge extendeddrawbridge = new ExtendedDrawbridge();
+    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":extendeddrawbridge")
+    public static ExtendedDrawbridge extendeddrawbridge;
 
-//    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":advanceddrawbridge")
-    public static AdvDrawbridge advanceddrawbridge = new AdvDrawbridge();
+    @GameRegistry.ObjectHolder(Drawbridges.MODID + ":advanceddrawbridge")
+    public static AdvDrawbridge advanceddrawbridge;
 
     @GameRegistry.ObjectHolder(Drawbridges.MODID + ":oreCopper")
     public static OreBlock oreCopper;
@@ -40,18 +34,14 @@ public class ModBlocks {
     @GameRegistry.ObjectHolder(Drawbridges.MODID + ":oreTin")
     public static OreBlock oreTin;
 
-
-    public static void registerDrawbridges() {
-        ForgeRegistries.BLOCKS.register(drawbridge);
-        ForgeRegistries.BLOCKS.register(extendeddrawbridge);
-        ForgeRegistries.BLOCKS.register(advanceddrawbridge);
-    }
-
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         if(!Config.useVanillaRecipe) {
             event.getRegistry().register(new OreBlock("Copper"));
             event.getRegistry().register(new OreBlock("Tin"));
         }
+        event.getRegistry().register(new Drawbridge());
+        event.getRegistry().register(new ExtendedDrawbridge());
+        event.getRegistry().register(new AdvDrawbridge());
     }
 
     public static void registerTileEntity() {
@@ -87,12 +77,5 @@ public class ModBlocks {
                 block.initModel();
             }
         }
-    }
-
-
-
-    @SideOnly(Side.CLIENT)
-    public static void initItemModel() {
-        drawbridge.initItemModel();
     }
 }

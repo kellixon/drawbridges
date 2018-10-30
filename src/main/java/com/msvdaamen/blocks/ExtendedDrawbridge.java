@@ -26,6 +26,7 @@ public class ExtendedDrawbridge extends BlockFacing implements ITileEntityProvid
     public ExtendedDrawbridge() {
         setRegistryName("extendeddrawbridge");
         setUnlocalizedName(Drawbridges.MODID + ".extendeddrawbridge");
+        ModBlocks.addBlocks(this);
     }
 
     @Nullable
